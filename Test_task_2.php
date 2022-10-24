@@ -44,11 +44,11 @@
 
 	<h2>Результат: </h2>
 	<?php
-	$warning = isset($_GET['M']) ? $_GET['M'] : 0;
-	$error = isset($_GET['N']) ? $_GET['N'] : 0;
+	$warning = isset($_GET['M']) ? $_GET['M'] : 0; // вводим количество ворнингов 
+	$error = isset($_GET['N']) ? $_GET['N'] : 0; // вводим количество фатальных ошибок 
 	$commit = 0;
 	if ((empty($warning)) || (empty($error)) || (!is_numeric($error)) || (!is_numeric($warning)) || ($warning < 0) || ($error < 0)) {
-		echo "Ждем от тебя корректных данных на вход ;))";
+		echo "Ждем от тебя корректных данных на вход ;))"; // проверка корректности ввода
 	} else {
 		if ($error % 2 == 1 && $warning == 0) {
 			echo '-1';
